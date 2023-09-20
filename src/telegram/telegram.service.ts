@@ -35,6 +35,7 @@ export class TelegramService {
         const UrlID = `http://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=dd6c78e623ca0fdd3d02505b22f92226`;
 
         this.bot.sendMessage(TEST_USER_ID, `Hello`);
+        this.bot.sendMessage(TEST_USER_ID, `Write the name of any city or state to get the corresponding weather update.`);
 
         request(UrlID, (error, response, body) => { // Use an arrow function here
 
