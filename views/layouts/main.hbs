@@ -1,0 +1,33 @@
+<script src="admin-panel.js" defer></script>
+
+<h2>User Management</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+    <tr>
+      <td>{{ this.id }}</td>
+      <td>{{ this.name }}</td>
+      <td>{{ this.email }}</td>
+      <td>
+        <a href="/admin/block/{{ this.id }}">Block</a> |
+        <a href="/admin/delete/{{ this.id }}">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+
+    <form id="updateApiKeyForm" action="/admin/api-key" method="POST">
+        <input type="hidden" name="_method" value="POST">
+        <input type="text" id="newApiKey" name="apiKey" placeholder="New API Key">
+        <button type="submit">Update API Key</button>
+    </form>
+
+  </tbody>
+</table>

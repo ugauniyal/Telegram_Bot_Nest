@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 
 const TelegramBot = require('node-telegram-bot-api');
 
-const token = "6435928563:AAFkMyveQVUaPnvyiu6QDjdspWf3fvl8kYA";
+const token = process.env.TELEGRAM_TOKEN;
 
 const request = require('request');
 

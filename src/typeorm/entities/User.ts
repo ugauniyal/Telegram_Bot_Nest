@@ -10,4 +10,10 @@ export class User {
 
   @Column()
   displayName: string;
+
+  @Column()
+  status: string = 'false';
+
+  @Column()
+  isAdmin: string = 'true';
 }
